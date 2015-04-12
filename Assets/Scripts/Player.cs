@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 
 	public Rigidbody2D rb;
 	public Weapon weapon;
-	public Vector2 speed = new Vector2(3, -1);
+	public Vector2 speed = new Vector2(3, 1);
 	public float stationaryTimeScale = 0.15f;
 	public float movingTimeScale = 1.0f;
 

@@ -3,13 +3,20 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	// Use this for initialization
+	public Rigidbody2D rb;
+	public Vector2 speed = new Vector2(0, 3);
+
+	private Vector2 movement = new Vector2(0, 0);
+
 	void Start () {
-	
+		movement.y = speed.y;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	void FixedUpdate () {
+		rb.velocity = movement;
+	}
+
+	void OnBecameInvisible() {
+		Destroy(this.gameObject);
 	}
 }

@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21237570}
   - 50: {fileID: 5078808}
   - 61: {fileID: 6198678}
+  - 114: {fileID: 11464432}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -58,6 +59,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: .100000001, y: .25}
+--- !u!114 &11464432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8809b4bc7d279476d8c27f32de20b323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 5078808}
+  speed: {x: 0, y: 3}
 --- !u!212 &21237570
 SpriteRenderer:
   m_ObjectHideFlags: 1
