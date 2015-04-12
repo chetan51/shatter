@@ -5,6 +5,8 @@ public class Weapon : MonoBehaviour {
 
 	public Renderer rd;
 	public Transform projectilePrefab;
+	public TextMesh text;
+	public int numProjectiles = 3;
 
 	public void Shoot() {
 		Transform projectile = Instantiate(projectilePrefab) as Transform;
@@ -13,6 +15,16 @@ public class Weapon : MonoBehaviour {
 		position = transform.position;
 		position.y += rd.bounds.size.y / 2;
 
+		projectile.GetComponent<Projectile>().weapon = this;
 		projectile.position = position;
+		numProjectiles--;
+	}
+
+	public void Update() {
+		text.text = numProjectiles.ToString();
+		text.color = Color.black;
+		if (numProjectiles == 0) {
+			text.color = Color.red;
+		}
 	}
 }

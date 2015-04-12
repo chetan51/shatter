@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5078808}
-  speed: {x: 0, y: 3}
+  speed: {x: 0, y: 5}
 --- !u!212 &21237570
 SpriteRenderer:
   m_ObjectHideFlags: 1
