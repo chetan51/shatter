@@ -9,6 +9,10 @@ public class Weapon : MonoBehaviour {
 	public int numProjectiles = 3;
 
 	public void Shoot() {
+		if (numProjectiles == 0) {
+			return;
+		}
+
 		Transform projectile = Instantiate(projectilePrefab) as Transform;
 
 		Vector3 position;

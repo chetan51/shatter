@@ -14,13 +14,11 @@ public class Player : MonoBehaviour {
 	private Vector2 target = new Vector2(0, 0);
 	private Vector3 lastPosition;
 
-	// Use this for initialization
 	void Start () {
 		movement.y = speed.y;
 		lastPosition = transform.position;
 	}
 
-	// Update is called once per frame
 	void Update () {
 		Time.timeScale = stationaryTimeScale;
 
@@ -49,5 +47,12 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate () {
 		rb.velocity = movement;
+	}
+
+	void OnTriggerEnter2D(Collider2D otherCollider) {
+		Target target = otherCollider.gameObject.GetComponent<Target>();
+	    if (target != null) {
+	    	Application.LoadLevel(Application.loadedLevel);
+	    }
 	}
 }
