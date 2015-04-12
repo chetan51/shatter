@@ -299,6 +299,7 @@ GameObject:
   - 61: {fileID: 868872883}
   - 50: {fileID: 868872882}
   - 114: {fileID: 868872885}
+  - 114: {fileID: 868872886}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -384,7 +385,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 868872882}
+  weapon: {fileID: 868872886}
   speed: {x: 3, y: 1}
+  stationaryTimeScale: .150000006
+  movingTimeScale: 1
+--- !u!114 &868872886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 868872880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee457dc4146184acd907a6a794325b59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rd: {fileID: 868872884}
+  projectilePrefab: {fileID: 439054, guid: f7977ce61da76447aa4f0f4efe53090c, type: 2}
 --- !u!1001 &956485308
 Prefab:
   m_ObjectHideFlags: 0
