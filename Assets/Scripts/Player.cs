@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public Vector2 speed = new Vector2(3, 1);
 	public float stationaryTimeScale = 0.15f;
 	public float movingTimeScale = 1.0f;
+	public float fixedTimeStep = 0.02f;
 
 	private Vector2 movement = new Vector2(0, 0);
 	private Vector2 target = new Vector2(0, 0);
@@ -19,8 +20,13 @@ public class Player : MonoBehaviour {
 		lastPosition = transform.position;
 	}
 
+	void UpdateTimeScale(float timeScale) {
+		Time.timeScale = timeScale;
+		Time.fixedDeltaTime = Time.timeScale * 0.02f;
+	}
+
 	void Update () {
-		Time.timeScale = stationaryTimeScale;
+		UpdateTimeScale(stationaryTimeScale);
 
 		if (Input.GetMouseButton(0)) {
 			// Calculate new target
@@ -28,7 +34,7 @@ public class Player : MonoBehaviour {
 			mousePosition.x = Math.Min (Math.Max (mousePosition.x, 0), Screen.width);
 			target = Camera.main.ScreenToWorldPoint (mousePosition);
 
-			Time.timeScale = movingTimeScale;
+			UpdateTimeScale(movingTimeScale);
 		}
 		if (Input.GetMouseButtonDown(1)) {
 			// Shoot projectile
