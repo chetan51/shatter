@@ -25,10 +25,8 @@ public class Missile : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		float diffBearing = targetBearing - bearing;
-		if (diffBearing > Mathf.PI) {
-			diffBearing = diffBearing - 2 * Mathf.PI;
-		}
+		float diffBearing = Mathf.Atan2(Mathf.Sin(targetBearing - bearing),
+		                                Mathf.Cos(targetBearing - bearing));
 		bearing = bearing + diffBearing * angularSpeed * Time.timeScale;
 
 		Vector2 movement = new Vector2(speed * Mathf.Cos(bearing),

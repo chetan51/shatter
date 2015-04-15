@@ -21,7 +21,6 @@ public class MissileControl : MonoBehaviour {
 			Vector2 inputPosition = new Vector2(worldPoint.x, worldPoint.y);
 
 			if (Input.GetMouseButtonDown(0)) {
-				Debug.Log("lol");
 				if (colliderComponent == Physics2D.OverlapPoint(inputPosition)) {
 					initialInputPosition = inputPosition;
 					isActive = true;
