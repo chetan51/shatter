@@ -14,6 +14,7 @@ public class MissileControl : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButtonUp(0)) {
 			isActive = false;
+			missile.HideTrace();
 		}
 
 		if (Input.GetMouseButton(0)) {
@@ -24,6 +25,7 @@ public class MissileControl : MonoBehaviour {
 				if (colliderComponent == Physics2D.OverlapPoint(inputPosition)) {
 					initialInputPosition = inputPosition;
 					isActive = true;
+					missile.ShowTrace();
 				}
 			}
 
