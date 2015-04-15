@@ -29,7 +29,7 @@ public class Missile : MonoBehaviour {
 		if (diffBearing > Mathf.PI) {
 			diffBearing = diffBearing - 2 * Mathf.PI;
 		}
-		bearing = bearing + diffBearing * angularSpeed;
+		bearing = bearing + diffBearing * angularSpeed * Time.timeScale;
 
 		Vector2 movement = new Vector2(speed * Mathf.Cos(bearing),
 		                               speed * Mathf.Sin(bearing));

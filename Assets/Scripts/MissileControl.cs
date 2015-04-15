@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Control : MonoBehaviour {
+public class MissileControl : MonoBehaviour {
 
 	public Collider2D colliderComponent;
 	public Missile missile;
@@ -12,13 +12,16 @@ public class Control : MonoBehaviour {
 	private Vector2 initialInputPosition;
 
 	void Update () {
+		if (Input.GetMouseButtonUp(0)) {
+			isActive = false;
+		}
+
 		if (Input.GetMouseButton(0)) {
 			Vector3 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			Vector2 inputPosition = new Vector2(worldPoint.x, worldPoint.y);
 
 			if (Input.GetMouseButtonDown(0)) {
-				isActive = false;
-
+				Debug.Log("lol");
 				if (colliderComponent == Physics2D.OverlapPoint(inputPosition)) {
 					initialInputPosition = inputPosition;
 					isActive = true;
