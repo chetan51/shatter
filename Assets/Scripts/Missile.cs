@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour {
 
 	public float speed = 3.0f;
 	public float angularSpeed = 0.1f;
-	public float bearing = Mathf.PI / 2;
+	public float bearing = Mathf.PI / 2;  // TODO: Try using Rigidbody2D.rotation
 
 	private float targetBearing;
 
