@@ -22,11 +22,21 @@ public class Missile : MonoBehaviour {
 		for (int i = 0; i < numTracers; i++) {
 			tracers[i].SetActive(true);
 		}
+
+		UpdateTrace();
 	}
 
 	public void HideTrace() {
 		for (int i = 0; i < numTracers; i++) {
 			tracers[i].SetActive(false);
+		}
+	}
+
+	private void UpdateTrace() {
+		for (int i = 0; i < numTracers; i++) {
+			Vector3 position = transform.position;
+			position.y += (i + 1) * .5f;
+			tracers[i].transform.position = position;
 		}
 	}
 
@@ -41,10 +51,6 @@ public class Missile : MonoBehaviour {
 			tracers[i] = Instantiate(Resources.Load("MissileTracer") as GameObject);
 			tracers[i].transform.SetParent(this.transform, false);
 
-			Vector3 position = tracers[i].transform.position;
-			position.y += (i + 1) * .5f;
-			tracers[i].transform.position = position;
-
 			tracerSpriteRenderer = tracers[i].GetComponent<SpriteRenderer>();
 			color = spriteRenderer.color;
 			color.a = Mathf.Lerp(1, 0, (float)i / numTracers);
@@ -57,6 +63,8 @@ public class Missile : MonoBehaviour {
 	void Update() {
 		Vector3 angles = new Vector3(0f, 0f, bearing * Mathf.Rad2Deg - 90);
 		transform.localEulerAngles = angles;
+
+		UpdateTrace();
 	}
 
 	void FixedUpdate() {
