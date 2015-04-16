@@ -9,7 +9,7 @@ public class TimeControl : MonoBehaviour {
 
 	void UpdateTimeScale(float timeScale) {
 		Time.timeScale = timeScale;
-		Time.fixedDeltaTime = Time.timeScale * 0.02f;
+		Time.fixedDeltaTime = Time.timeScale * fixedTimeStep;
 	}
 
 	void Update () {
