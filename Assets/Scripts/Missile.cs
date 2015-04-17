@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour {
 	public SpriteRenderer spriteRenderer;
 	public LineRenderer lineRenderer;
 
-	public float speed = 3.0f;
+	public float thrust = 3.0f;
 	public float angularSpeed = 0.1f;
 	public float bearing = Mathf.PI / 2;  // TODO: Try using Rigidbody2D.rotation
 
@@ -63,9 +63,9 @@ public class Missile : MonoBehaviour {
 		                                Mathf.Cos(targetBearing - bearing));
 		bearing = bearing + diffBearing * angularSpeed * Time.timeScale;
 
-		Vector2 movement = new Vector2(speed * Mathf.Cos(bearing),
-		                               speed * Mathf.Sin(bearing));
-		rigidbodyComponent.velocity = movement;
+		Vector2 force = new Vector2(thrust * Mathf.Cos(bearing),
+	                                thrust * Mathf.Sin(bearing));
+		rigidbodyComponent.AddForce(force);
 	}
 
 }

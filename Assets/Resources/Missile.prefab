@@ -70,8 +70,8 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128202}
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_LinearDrag: 7
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_FixedAngle: 0
   m_IsKinematic: 0
@@ -163,8 +163,7 @@ MonoBehaviour:
   rigidbodyComponent: {fileID: 5016954}
   spriteRenderer: {fileID: 21292448}
   lineRenderer: {fileID: 12026330}
-  trailRenderer: {fileID: 9617910}
-  speed: 1
+  thrust: 20
   angularSpeed: .0299999993
   bearing: 1.57079637
 --- !u!114 &11458262
