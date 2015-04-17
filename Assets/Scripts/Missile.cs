@@ -68,4 +68,10 @@ public class Missile : MonoBehaviour {
 		rigidbodyComponent.AddForce(force);
 	}
 
+	void OnCollisionEnter2D(Collision2D collision) {
+		if (collision.gameObject.tag != "Target") {
+	    	Destroy(this.gameObject);
+		}
+	}
+
 }
