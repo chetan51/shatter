@@ -69,9 +69,12 @@ public class Missile : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject.tag != "Target") {
-	    	Destroy(this.gameObject);
+		Target target = collision.gameObject.GetComponent<Target>();
+		if (target != null && target.missile == this.gameObject) {
+			return;
 		}
+
+    	Destroy(this.gameObject);
 	}
 
 }

@@ -3,7 +3,16 @@ using System.Collections;
 
 public class Target : MonoBehaviour {
 
+	public SpriteRenderer spriteRenderer;
+	public GameObject missile;
+
+	void Start() {
+		spriteRenderer.color = missile.GetComponent<SpriteRenderer>().color;
+	}
+
 	void OnCollisionEnter2D(Collision2D collision) {
-    	Destroy(this.gameObject);
+		if (collision.gameObject == missile) {
+	    	Destroy(this.gameObject);
+		}
 	}
 }
