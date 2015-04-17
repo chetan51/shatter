@@ -507,6 +507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1378117341}
   screenEdge: {fileID: 2104800399}
+  toFollow:
+  - {fileID: 1057570223}
+  - {fileID: 1840475588}
+  distanceBehind: 2.5
 --- !u!4 &1415075587 stripped
 Transform:
   m_PrefabParentObject: {fileID: 487094, guid: 9cde4c7c1c77b4d039bfe2936926e390, type: 2}
