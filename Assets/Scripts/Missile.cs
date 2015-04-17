@@ -46,7 +46,9 @@ public class Missile : MonoBehaviour {
 
 	void Start() {
 		targetBearing = bearing;
-		lineRenderer.SetColors(spriteRenderer.color, spriteRenderer.color);
+
+		Color color = spriteRenderer.color;
+		lineRenderer.SetColors(color, color);
 	}
 
 	void Update() {
