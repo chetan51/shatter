@@ -241,6 +241,30 @@ Prefab:
       propertyPath: swipeColliderComponent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 417082, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .180000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 417082, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 417082, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9617910, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_StartWidth
+      value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9617910, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_EndWidth
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 9617910, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
+      propertyPath: m_Time
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c68bac4bbe5244b4887c5f65b31721e, type: 2}
   m_IsPrefabParent: 0
@@ -276,8 +300,8 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   m_Parameters:
-    startWidth: .0199999996
-    endWidth: 0
+    startWidth: .0599999987
+    endWidth: .00499999989
     m_StartColor:
       serializedVersion: 2
       rgba: 4294967295
