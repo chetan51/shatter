@@ -5,59 +5,48 @@ public class Missile : MonoBehaviour {
 
 	public Rigidbody2D rigidbodyComponent;
 	public SpriteRenderer spriteRenderer;
+	public LineRenderer lineRenderer;
 
 	public float speed = 3.0f;
 	public float angularSpeed = 0.1f;
 	public float bearing = Mathf.PI / 2;  // TODO: Try using Rigidbody2D.rotation
-	public int numTracers = 10;
 
 	private float targetBearing;
-	private GameObject[] tracers;
+	private bool isTraceVisible;
 
-	public void SetTargetBearing(Vector2 delta) {
+	public void SetTargetBearing(Vector3 target) {
+		Vector3 delta = target - transform.position;
 		targetBearing = Mathf.Atan2(delta.y, delta.x);
 	}
 
 	public void ShowTrace() {
-		for (int i = 0; i < numTracers; i++) {
-			tracers[i].SetActive(true);
-		}
-
-		UpdateTrace();
+		isTraceVisible = true;
 	}
 
 	public void HideTrace() {
-		for (int i = 0; i < numTracers; i++) {
-			tracers[i].SetActive(false);
-		}
+		isTraceVisible = false;
 	}
 
 	private void UpdateTrace() {
-		for (int i = 0; i < numTracers; i++) {
-			Vector3 position = transform.position;
-			position.y += (i + 1) * .5f;
-			tracers[i].transform.position = position;
+		if (!isTraceVisible) {
+			lineRenderer.SetPosition(0, new Vector3(0, 0, 0));
+			lineRenderer.SetPosition(1, new Vector3(0, 0, 0));
+			return;
 		}
+
+		float length = 5.0f;
+		Vector3 start = transform.position;
+		start.z += 1;
+		Vector3 delta = new Vector3(length * Mathf.Cos(targetBearing),
+		                            length * Mathf.Sin(targetBearing),
+		                            0);
+		lineRenderer.SetPosition(0, start);
+		lineRenderer.SetPosition(1, start + delta);
 	}
 
 	void Start() {
 		targetBearing = bearing;
-		tracers = new GameObject[numTracers];
-
-		SpriteRenderer tracerSpriteRenderer;
-		Color color;
-
-		for (int i = 0; i < numTracers; i++) {
-			tracers[i] = Instantiate(Resources.Load("MissileTracer") as GameObject);
-			tracers[i].transform.SetParent(this.transform, false);
-
-			tracerSpriteRenderer = tracers[i].GetComponent<SpriteRenderer>();
-			color = spriteRenderer.color;
-			color.a = Mathf.Lerp(1, 0, (float)i / numTracers);
-			tracerSpriteRenderer.color = color;
-
-			tracers[i].SetActive(false);
-		}
+		lineRenderer.SetColors(spriteRenderer.color, spriteRenderer.color);
 	}
 
 	void Update() {

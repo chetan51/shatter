@@ -33,7 +33,7 @@ public class MissileControl : MonoBehaviour {
 				Vector2 delta = inputPosition - initialInputPosition;
 
 				if (delta.magnitude > movementThreshold) {
-					missile.SetTargetBearing(delta);
+					missile.SetTargetBearing(worldPoint);
 				}
 			}
 		}
