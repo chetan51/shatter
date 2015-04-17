@@ -74,7 +74,7 @@ public class Missile : MonoBehaviour {
 			return;
 		}
 
-    	Destroy(this.gameObject);
+    	Application.LoadLevel(Application.loadedLevel);
 	}
 
 }
