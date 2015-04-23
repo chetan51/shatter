@@ -87,7 +87,7 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &1588500770
+--- !u!1001 &894253547
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -126,7 +126,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11453074, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
+    - target: {fileID: 5018438, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
+      propertyPath: m_LinearDrag
+      value: 3.25999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001174, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
+      propertyPath: m_LinearDrag
+      value: 3.25999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018438, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11452914, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
       propertyPath: force.y
       value: 15
       objectReference: {fileID: 0}

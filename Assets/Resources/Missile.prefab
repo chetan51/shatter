@@ -12,7 +12,6 @@ GameObject:
   - 50: {fileID: 5016954}
   - 61: {fileID: 6119618}
   - 114: {fileID: 11436808}
-  - 96: {fileID: 9617910}
   - 120: {fileID: 12026330}
   m_Layer: 0
   m_Name: Missile
@@ -38,6 +37,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &177120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412496}
+  - 96: {fileID: 9689848}
+  m_Layer: 0
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412496
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 177120}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.42999995, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 417082}
+  m_RootOrder: 1
 --- !u!4 &417082
 Transform:
   m_ObjectHideFlags: 1
@@ -49,6 +76,7 @@ Transform:
   m_LocalScale: {x: .180000007, y: .25, z: .25}
   m_Children:
   - {fileID: 419900}
+  - {fileID: 412496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &419900
@@ -104,12 +132,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1.5, y: 3}
---- !u!96 &9617910
+--- !u!96 &9689848
 TrailRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128202}
+  m_GameObject: {fileID: 177120}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -137,13 +165,13 @@ TrailRenderer:
       rgba: 3523215359
     m_Color[1]:
       serializedVersion: 2
-      rgba: 2197815295
+      rgba: 2600468479
     m_Color[2]:
       serializedVersion: 2
-      rgba: 1308622847
+      rgba: 1375731711
     m_Color[3]:
       serializedVersion: 2
-      rgba: 637534207
+      rgba: 520093695
     m_Color[4]:
       serializedVersion: 2
       rgba: 16777215
