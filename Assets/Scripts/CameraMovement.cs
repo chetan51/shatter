@@ -26,7 +26,7 @@ public class CameraMovement : MonoBehaviour {
 
 		float distance;
 		foreach (GameObject objectToFollow in toFollow) {
-			distance = objectToFollow.transform.position.y;
+			distance = objectToFollow.transform.position.y + cam.orthographicSize - transform.position.y;
 			if (distance < closestDistance) {
 				closestDistance = distance;
 				closestObject = objectToFollow;
