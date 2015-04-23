@@ -101,7 +101,7 @@ GameObject:
   - 114: {fileID: 11439066}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ GameObject:
   - 114: {fileID: 11426046}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderComponent: {fileID: 6160458}
   missile: {fileID: 11439214}
-  movementThreshold: .5
+  rotationSensitivity: 2
 --- !u!114 &11439066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -832,9 +832,7 @@ MonoBehaviour:
   rigidbodyComponent: {fileID: 5098930}
   spriteRenderer: {fileID: 21296846}
   lineRenderer: {fileID: 12033222}
-  thrust: 20
-  angularSpeed: .0299999993
-  bearing: 1.57079637
+  force: {x: 0, y: 15}
 --- !u!114 &11445384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -863,9 +861,7 @@ MonoBehaviour:
   rigidbodyComponent: {fileID: 5004978}
   spriteRenderer: {fileID: 21241524}
   lineRenderer: {fileID: 12058716}
-  thrust: 20
-  angularSpeed: .0299999993
-  bearing: 1.57079637
+  force: {x: 0, y: 15}
 --- !u!114 &11479856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -896,7 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderComponent: {fileID: 6188740}
   missile: {fileID: 11453074}
-  movementThreshold: .5
+  rotationSensitivity: 2
 --- !u!120 &12033222
 LineRenderer:
   m_ObjectHideFlags: 1

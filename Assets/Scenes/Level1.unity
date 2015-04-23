@@ -126,13 +126,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 163478, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 192770, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
-      propertyPath: m_TagString
-      value: Target
+    - target: {fileID: 11453074, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}
+      propertyPath: force.y
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cc7c7b9904f9446289a76630f8de456, type: 2}

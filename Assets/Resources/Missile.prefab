@@ -163,9 +163,7 @@ MonoBehaviour:
   rigidbodyComponent: {fileID: 5016954}
   spriteRenderer: {fileID: 21292448}
   lineRenderer: {fileID: 12026330}
-  thrust: 20
-  angularSpeed: .0299999993
-  bearing: 1.57079637
+  force: {x: 0, y: 15}
 --- !u!114 &11458262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colliderComponent: {fileID: 6113694}
   missile: {fileID: 11436808}
-  movementThreshold: .5
+  rotationSensitivity: 2
 --- !u!120 &12026330
 LineRenderer:
   m_ObjectHideFlags: 1
