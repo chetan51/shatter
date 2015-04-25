@@ -11,12 +11,19 @@ public class Projectile : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		Target target = collision.gameObject.GetComponent<Target>();
-		if (target != null && target.projectile == this.gameObject) {
-			return;
-		}
-
     	Application.LoadLevel(Application.loadedLevel);
+	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		Target target = other.gameObject.GetComponent<Target>();
+
+		if (target != null && target.projectile == this.gameObject) {
+	    	Destroy(other.gameObject);
+	    }
+
+    	if (GameObject.FindGameObjectsWithTag("Target").Length == 1) {
+			Application.LoadLevel(Application.loadedLevel+1);
+    	}
 	}
 
 }
