@@ -5,13 +5,16 @@ public class Projectile : MonoBehaviour {
 
 	public Rigidbody2D rigidbodyComponent;
 
+	public float forceMultiplier = 2;
+	public float rotationMultiplier = 200;
+
 	public void AddForce(Vector2 force) {
-		rigidbodyComponent.AddForce(force);
-		rigidbodyComponent.angularVelocity = force.magnitude * 100;
+		rigidbodyComponent.AddForce(force * forceMultiplier);
+		rigidbodyComponent.angularVelocity = force.magnitude * rotationMultiplier;
 	}
 
 	IEnumerator CheckSolved() {
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.5f);
 	    if (GameObject.FindGameObjectsWithTag("Target").Length == 0) {
 			Application.LoadLevel(Application.loadedLevel+1);
 	    }

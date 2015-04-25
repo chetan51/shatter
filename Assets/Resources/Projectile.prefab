@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbodyComponent: {fileID: 5030834}
+  forceMultiplier: 2
+  rotationMultiplier: 100
 --- !u!114 &11459956
 MonoBehaviour:
   m_ObjectHideFlags: 1
