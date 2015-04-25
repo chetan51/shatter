@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour {
 		Target target = other.gameObject.GetComponent<Target>();
 
 		if (target != null && target.projectile == this.gameObject) {
-	    	Destroy(other.gameObject);
+	    	target.Destroy();
 	    }
 
     	if (GameObject.FindGameObjectsWithTag("Target").Length == 1) {
