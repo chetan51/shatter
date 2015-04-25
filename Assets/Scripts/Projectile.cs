@@ -10,6 +10,13 @@ public class Projectile : MonoBehaviour {
 		rigidbodyComponent.angularVelocity = force.magnitude * 100;
 	}
 
+	IEnumerator CheckSolved() {
+		yield return new WaitForSeconds(0.2f);
+	    if (GameObject.FindGameObjectsWithTag("Target").Length == 0) {
+			Application.LoadLevel(Application.loadedLevel+1);
+	    }
+	}
+
 	void OnCollisionEnter2D(Collision2D collision) {
     	Application.LoadLevel(Application.loadedLevel);
 	}
@@ -21,14 +28,7 @@ public class Projectile : MonoBehaviour {
 	    	target.Destroy();
 	    }
 
-    	if (GameObject.FindGameObjectsWithTag("Target").Length == 1) {
-    		NextLevel();
-    	}
-	}
-
-	IEnumerator NextLevel() {
-		yield return new WaitForSeconds(1.0f);
-		Application.LoadLevel(Application.loadedLevel+1);
+	    StartCoroutine(CheckSolved());
 	}
 
 }

@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487094, guid: 9cde4c7c1c77b4d039bfe2936926e390, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100496, guid: 9cde4c7c1c77b4d039bfe2936926e390, type: 2}
       propertyPath: m_Name
@@ -380,7 +380,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 487094, guid: 9cde4c7c1c77b4d039bfe2936926e390, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11453852, guid: 9cde4c7c1c77b4d039bfe2936926e390, type: 2}
       propertyPath: particleSystemComponent
