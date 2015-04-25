@@ -22,8 +22,13 @@ public class Projectile : MonoBehaviour {
 	    }
 
     	if (GameObject.FindGameObjectsWithTag("Target").Length == 1) {
-			Application.LoadLevel(Application.loadedLevel+1);
+    		NextLevel();
     	}
+	}
+
+	IEnumerator NextLevel() {
+		yield return new WaitForSeconds(1.0f);
+		Application.LoadLevel(Application.loadedLevel+1);
 	}
 
 }

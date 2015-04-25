@@ -5,7 +5,6 @@ public class Target : MonoBehaviour {
 
 	public SpriteRenderer spriteRenderer;
 	public GameObject projectile;
-	public ParticleSystem particleSystemComponent;
 	public GameObject forcefield;
 
 	public float destroyDuration = 0.5f;
@@ -13,13 +12,11 @@ public class Target : MonoBehaviour {
 
 	public void Destroy() {
 		DestroyForcefield();
-		particleSystemComponent.Play();
-		spriteRenderer.enabled = false;
+		CreateExplosion();
+		Destroy(gameObject);
 	}
 
 	void DestroyForcefield() {
-		forcefield.GetComponent<BoxCollider2D>().enabled = false;
-		forcefield.GetComponent<SpriteRenderer>().enabled = false;
 		// AnimateDestroyForceField();
 	}
 
@@ -29,9 +26,16 @@ public class Target : MonoBehaviour {
 	// 	yield return null;
 	// }
 
+	void CreateExplosion() {
+		GameObject explosion = Instantiate(Resources.Load("TargetExplosion")) as GameObject;
+		explosion.transform.position = transform.position;
+		ParticleSystem particleSystemComponent = explosion.GetComponent<ParticleSystem>();
+		particleSystemComponent.startColor = spriteRenderer.color;
+		particleSystemComponent.Play();
+	}
+
 	void Start() {
 		spriteRenderer.color = projectile.GetComponent<SpriteRenderer>().color;
-		particleSystemComponent.startColor = spriteRenderer.color;
 	}
 
 }
