@@ -4,14 +4,14 @@ using System.Collections;
 public class Target : MonoBehaviour {
 
 	public SpriteRenderer spriteRenderer;
-	public GameObject missile;
+	public GameObject projectile;
 
 	void Start() {
-		spriteRenderer.color = missile.GetComponent<SpriteRenderer>().color;
+		spriteRenderer.color = projectile.GetComponent<SpriteRenderer>().color;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision) {
-		if (collision.gameObject == missile) {
+		if (collision.gameObject == projectile) {
 	    	Destroy(this.gameObject);
 
 	    	if (GameObject.FindGameObjectsWithTag("Target").Length == 1) {

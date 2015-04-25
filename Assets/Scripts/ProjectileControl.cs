@@ -44,7 +44,7 @@ public class ProjectileControl : MonoBehaviour {
 
 			if (Input.GetMouseButtonDown(0)) {
 				if (colliderComponent == Physics2D.OverlapPoint(inputPosition)) {
-					startInputPosition = inputPosition;
+					startInputPosition = transform.position;
 					isActive = true;
 				}
 			}

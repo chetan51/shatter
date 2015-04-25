@@ -12,7 +12,7 @@ public class Projectile : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collision) {
 		Target target = collision.gameObject.GetComponent<Target>();
-		if (target != null && target.missile == this.gameObject) {
+		if (target != null && target.projectile == this.gameObject) {
 			return;
 		}
 
